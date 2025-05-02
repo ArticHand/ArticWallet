@@ -54,4 +54,4 @@ class CosmosDBConnection {
   }
 }
 
-module.exports = new CosmosDBConnection();
+module.exports = CosmosDBConnection;

@@ -4,10 +4,19 @@ const authMiddleware = require('../middleware/auth.middleware');
 
 const router = express.Router();
 
-router.post('/create', authMiddleware, WalletController.createWallet);
-router.post('/import', authMiddleware, WalletController.importWallet);
-router.get('/balance', authMiddleware, WalletController.getWalletBalance);
-router.post('/transfer', authMiddleware, WalletController.transferUSDT);
-router.get('/transactions', authMiddleware, WalletController.getTransactionHistory);
+// Protect all wallet routes
+router.use(authMiddleware);
+
+// Create a new wallet
+router.post('/create', WalletController.createWallet);
+
+// Get user's wallets
+router.get('/', WalletController.getUserWallets);
+
+// Get specific wallet details
+router.get('/:walletId', WalletController.getWalletDetails);
+
+// Get transaction history for a specific network
+router.get('/transactions/:network', WalletController.getTransactionHistory);
 
 module.exports = router;
