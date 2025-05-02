@@ -8,6 +8,8 @@ const logger = require('./utils/logger');
 
 const walletRoutes = require('./routes/wallet.routes');
 const authRoutes = require('./routes/auth.routes');
+const passwordResetRoutes = require('./routes/password-reset.routes');
+const { authLimiter } = require('./middleware/rate-limiter.middleware');
 
 const app = express();
 
@@ -16,9 +18,14 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
+// Rate Limiting
+app.use('/api/auth', authLimiter);
+app.use('/api/password-reset', authLimiter);
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/wallet', walletRoutes);
+app.use('/api/password-reset', passwordResetRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

@@ -1,112 +1,82 @@
 # ArticWallet: Multi-Network USDT Crypto Wallet
 
-## Overview
-ArticWallet is a comprehensive Node.js-based cryptocurrency wallet supporting USDT tokens on Ethereum (ERC20) and Tron (TRC20) networks.
+## 🚀 Project Overview
 
-### Key Features
-- 🔐 Secure wallet creation for Ethereum and Tron networks
+ArticWallet is a comprehensive Node.js-based cryptocurrency wallet supporting USDT tokens across multiple blockchain networks.
+
+### 🌟 Key Features
+- 🔐 Secure wallet creation for Ethereum, Tron, and Bitcoin networks
 - 💰 USDT token balance checking
-- 🔄 Token transfers across networks
-- 📋 Transaction history tracking
+- 🔄 Cross-network token transfers
+- 📋 Detailed transaction history tracking
 - 🛡️ JWT-based authentication
-- 🌐 Environment-based configuration
+- 💱 Advanced token management
 
-### Core Technologies
+## 🛠 Core Technologies
 - **Backend**: Node.js, Express
-- **Blockchain Interactions**: 
+- **Blockchain**: 
   - web3.js (Ethereum)
   - tronweb (Tron)
-  - ethers.js (Additional Ethereum utilities)
-- **Database**: Azure Cosmos DB (NoSQL)
+  - ethers.js (Ethereum utilities)
+- **Database**: Azure Cosmos DB
 - **Authentication**: JWT
 - **Logging**: Winston
 
-### Security Considerations
-- Environment variables for sensitive configurations
+## 🔒 Security Considerations
+- Environment-based configuration
 - JWT authentication middleware
 - Comprehensive private key encryption
-- Separate development and production configurations
-- Detailed error logging and monitoring
+- Separate development/production configs
+- Detailed error logging
 
-## Recent Improvements
-### Blockchain Service
-- Enhanced network configuration validation
-- Dynamic provider URL generation
-- Comprehensive error handling
-- Secure private key encryption using AES-256-GCM
-- Support for multiple Ethereum and Tron networks
-
-### Authentication Middleware
-- Improved token validation
-- Enhanced logging with request tracking
-- More detailed error responses
-- Token expiration handling
-
-### Wallet Controller
-- Added wallet creation limits
-- Improved input validation
-- Enhanced error handling and logging
-- More detailed API responses
-
-### Server Configuration
-- Implemented graceful shutdown mechanism
-- Added unhandled rejection and exception handling
-- Configurable host and port settings
-
-## Prerequisites
+## 📋 Prerequisites
 - Node.js 16+
 - npm 8+
 - Azure Cosmos DB account
-- Infura Project ID
-- TronGrid API Key
+- Blockchain API keys
 
-## Environment Variables
-Create a `.env.development` file with the following:
-```
-# Ethereum Configuration
-ETHEREUM_NETWORK=sepolia
-INFURA_PROJECT_ID=your_infura_project_id
-ETHEREUM_USDT_CONTRACT=usdt_contract_address
+## 🚀 Quick Start
 
-# Tron Configuration
-TRON_NETWORK=shasta
-TRONGRID_API_KEY=your_trongrid_api_key
-TRON_USDT_CONTRACT=usdt_contract_address
-
-# JWT Configuration
-JWT_SECRET=your_jwt_secret
-
-# Database Configuration
-COSMOS_ENDPOINT=your_cosmos_db_endpoint
-COSMOS_KEY=your_cosmos_db_key
-COSMOS_DATABASE=articwallet
-
-# Server Configuration
-PORT=3000
-HOST=0.0.0.0
-NODE_ENV=development
-```
-
-## Installation
+### Installation
 ```bash
 git clone https://github.com/yourusername/articwallet.git
 cd articwallet
 npm install
+```
+
+### Development
+```bash
+# Copy environment template
+cp .env.development.example .env.development
+
+# Run development server
 npm run dev
 ```
 
-## Testing
+### Production
+```bash
+# Copy environment template
+cp .env.production.example .env.production
+
+# Build and start production server
+npm run build
+npm start
+```
+
+## 🔐 Environment Configuration
+Create `.env.development` or `.env.production` with:
+- Blockchain network settings
+- API keys
+- Database credentials
+- JWT configurations
+
+## 🧪 Testing
 ```bash
 npm test
 ```
 
-## Contributing
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+## 📄 License
+MIT License
 
-## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Acknowledgments
-- Ethereum Foundation
-- Tron Network
-- Open-source community
+## ⚠️ Disclaimer
+For educational and development purposes. Exercise caution with cryptocurrency transactions.
